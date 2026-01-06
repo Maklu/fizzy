@@ -5,7 +5,7 @@
 <% end %>
 
 <article class="panel panel--wide shadow center txt-align-start">
-  <%= form_with url: oauth_authorization_path, method: :post, html: { class: "flex flex-column gap" } do |f| %>
+  <%= form_with url: oauth_authorization_path, method: :post, data: { turbo: false }, html: { class: "flex flex-column gap" } do |f| %>
     <%= f.hidden_field :client_id, value: @client.client_id %>
     <%= f.hidden_field :redirect_uri, value: @redirect_uri %>
     <%= f.hidden_field :state, value: @state %>
